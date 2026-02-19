@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearls Ink | Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth;}
+:root{
+  --black:#0c0c0c;
+  --soft:#141414;
+  --gold:#c6a84b;
+  --red:#8b1e1e;
+  --white:#f5f2ea;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Germania One', cursive;
+  background:var(--black);
+  color:var(--white);
+}
+
+/* HEADER */
+header{
+  background:var(--soft);
+  padding:2rem;
+  text-align:center;
+  border-bottom:2px solid var(--gold);
+}
+header h1{font-size:4rem;}
+
+nav{
+  margin-top:1rem;
+}
+nav a{
+  margin:0 15px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+nav a:hover{
+  color:var(--gold);
+  text-shadow:0 0 10px var(--gold);
+}
+
+/* HERO */
+.hero{
+  padding:8rem 2rem;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+  url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover fixed;
+}
+.hero h2{font-size:3.5rem;}
+.hero span{font-size:5rem;color:var(--gold);}
+
+/* SECTION */
+section{
+  padding:5rem 2rem;
+  text-align:center;
+  background:var(--soft);
+  border-bottom:1px solid #1d1d1d;
+}
+.divider{
+  width:80px;height:3px;
+  background:var(--gold);
+  margin:20px auto;
+  box-shadow:0 0 15px var(--gold);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:2rem;
+}
+.gallery img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border:2px solid var(--gold);
+  transition:.3s;
+}
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px var(--gold);
+}
+
+/* SHOP */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:2rem;
+}
+.product{
+  border:2px solid var(--gold);
+  padding:1rem;
+  transition:.3s;
+}
+.product:hover{
+  box-shadow:0 0 20px var(--gold);
+}
+
+button{
+  padding:10px 20px;
+  border:2px solid var(--gold);
+  background:none;
+  color:var(--gold);
+  cursor:pointer;
+  margin-top:10px;
+  transition:.3s;
+}
+button:hover{
+  background:var(--gold);
+  color:black;
+}
+
+/* CART */
+#cartDrawer{
+  position:fixed;
+  right:-350px;
+  top:0;
+  width:300px;
+  height:100%;
+  background:black;
+  border-left:2px solid var(--gold);
+  padding:1rem;
+  transition:.4s;
+  overflow:auto;
+}
+#cartDrawer.open{
+  right:0;
+}
+.cart-item{
+  margin-bottom:15px;
+  border-bottom:1px solid #333;
+  padding-bottom:10px;
+}
+
+/* FORM */
+form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+input, textarea, select{
+  padding:10px;
+  background:#1a1a1a;
+  border:1px solid var(--gold);
+  color:white;
+}
+
+/* SOCIALS */
+.socials a{
+  display:inline-block;
+  margin:10px 15px;
+  font-size:1.4rem;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+.socials a:hover{
+  color:var(--gold);
+  text-shadow:0 0 10px var(--gold);
+}
+
+footer{
+  background:black;
+  padding:2rem;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PEARLS INK</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#shop">Shop</a>
+    <a href="#custom">Custom Tattoo</a>
+    <a href="#booking">Booking</a>
+    <a href="#socials">Socials</a>
+    <a href="javascript:void(0)" onclick="toggleCart()">Cart</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Ink With <span>Meaning</span></h2>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="divider"></div>
+  <p style="max-width:800px;margin:auto;font-size:1.2rem;line-height:1.8;">
+    Pearls Ink is rooted in Chicano traditional, old school, love and prison-inspired art. 
+    My work reflects Mexican-American culture, loyalty, faith, romance, and storytelling through ink.
+    Every piece represents heritage, struggle, passion, and respect for the art form.
+  </p>
+</section>
+
+<section id="gallery">
+  <h2>Featured Work</h2>
+  <div class="divider"></div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1595433562696-3f9b7e0e3c36">
+    <img src="https://images.unsplash.com/photo-1603167820713-5a1f33d7b93a">
+    <img src="https://images.unsplash.com/photo-1602588793042-5d2f2e7e68a5">
+  </div>
+</section>
+
+<section id="shop">
+  <h2>Art Prints</h2>
+  <div class="divider"></div>
+  <div class="products">
+    <div class="product">
+      <h3>Love Letter Print</h3>
+      <p>$40</p>
+      <button onclick="addToCart('Love Letter Print',40)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Chicano Flash Sheet</h3>
+      <p>$60</p>
+      <button onclick="addToCart('Chicano Flash Sheet',60)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<section id="custom">
+  <h2>Custom Tattoo Request</h2>
+  <div class="divider"></div>
+  <form action="https://formsubmit.co/youremail@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <select name="Size">
+      <option>Small (2-4in)</option>
+      <option>Medium (5-8in)</option>
+      <option>Large (9in+)</option>
+    </select>
+    <textarea name="Description" placeholder="Describe your tattoo idea..." required></textarea>
+    <input type="file" name="Reference Image" accept="image/*">
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+<section id="booking">
+  <h2>Book Appointment</h2>
+  <div class="divider"></div>
+  <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarID"
+          width="100%" height="600" frameborder="0"></iframe>
+</section>
+
+<section id="socials">
+  <h2>Follow Pearls Ink</h2>
+  <div class="divider"></div>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Facebook</a>
+    <a href="#">Email</a>
+  </div>
+</section>
+
+<div id="cartDrawer">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3>Total: $<span id="total">0</span></h3>
+  <button onclick="toggleCart()">Close</button>
+</div>
+
+<footer>
+  © 2026 Pearls Ink
+</footer>
+
+<script>
+let cart=[];
+function toggleCart(){
+  document.getElementById("cartDrawer").classList.toggle("open");
+}
+function addToCart(name,price){
+  cart.push({name,price});
+  renderCart();
+}
+function renderCart(){
+  const cartDiv=document.getElementById("cartItems");
+  const totalSpan=document.getElementById("total");
+  cartDiv.innerHTML="";
+  let total=0;
+  cart.forEach((item,index)=>{
+    total+=item.price;
+    cartDiv.innerHTML+=`
+      <div class="cart-item">
+        ${item.name} - $${item.price}
+        <button onclick="removeItem(${index})">X</button>
+      </div>
+    `;
+  });
+  totalSpan.innerText=total;
+}
+function removeItem(index){
+  cart.splice(index,1);
+  renderCart();
+}
+</script>
+
+</body>
+</html>
